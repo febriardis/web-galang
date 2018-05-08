@@ -14,6 +14,7 @@ class User extends Model
         'no_telp',
         'email', 
         'alamat',
+        'foto',
         'username',
         'password',
     ];

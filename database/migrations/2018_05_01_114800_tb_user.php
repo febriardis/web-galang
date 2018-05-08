@@ -20,6 +20,7 @@ class TbUser extends Migration
             $table->string('no_telp');
             $table->string('email');
             $table->text('alamat');
+            $table->string('foto');
             $table->string('username');
             $table->string('password');
             $table->rememberToken();

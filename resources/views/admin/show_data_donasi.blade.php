@@ -16,6 +16,7 @@
 		<div class="clear"></div>
 	</div>
 
+	<a href="#" class="btn btn-default"><i class="glyphicon glyphicon-print"></i> Cetak</a>
 	@if(Session::has('pesan'))        
 		<span class="label label-info">{{Session::get('pesan')}}</span>
 	@endif
@@ -43,7 +44,15 @@
 	    		<td> {{ $dt->judul }} </td>
 	    		<td> {{ $dt->nominal }} </td>
 	    		<td> {{ $dt->no_rek }} </td>
-	    		<td></td>
+	    		<!-- cek -->
+	    		<td>{{ $dt->donasi_id }}</td>
+		        <div style="display: none;">
+	            	{{! $cektb = (App\Konfirmasi::where('donasi_id', 32))->first() }}
+	            </div>
+	            <!-- end -->
+	            <td style="width: 120px; height: 150px"> 
+           			<img src="{{ url('uploads/file/'.$cektb->bukti) }}" style="width: 100%; height: 100%"> 
+           		</td>
 	    	@if($dt->status == 'Processed')
 	    		<td><span class="label label-warning"><span class="glyphicon glyphicon-refresh"></span> Processed</span></td>
 	    		<td>

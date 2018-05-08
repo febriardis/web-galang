@@ -17,7 +17,7 @@ class User_login extends Authenticatable
     protected $table ='tb_users';
     
     protected $fillable = [
-        'nama', 'jenkel', 'no_telp','email', 'alamat','username','password',
+        'nama', 'jenkel', 'no_telp','email', 'alamat', 'foto','username','password',
     ];
 
     /**

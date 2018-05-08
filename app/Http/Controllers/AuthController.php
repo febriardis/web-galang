@@ -31,7 +31,8 @@ class AuthController extends Controller
 			$table->nama = $req->nama;
 			$table->jenkel = $req->jenkel;
 			$table->no_telp = $req->no_telp;
-			$table->email = $req->email;
+			$table->email = $req->email;	        
+			$table->foto = '';
 			$table->alamat = $req->alamat;
 			$table->username = $req->username;
 			$table->password = Hash::make($req->password);

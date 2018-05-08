@@ -16,6 +16,7 @@
 		<div class="clear"></div>
 	</div>
 
+	<a href="#" class="btn btn-default" onClick="window.print();"><i class="glyphicon glyphicon-print"></i> Cetak</a>
 	@if(Session::has('pesan'))        
 		<span class="label label-info">{{Session::get('pesan')}}</span>
 	@endif

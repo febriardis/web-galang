@@ -24,6 +24,7 @@ Route::get('/home', 'UserController@home')->middleware('auth:users');
 Route::get('/donasi', 'UserController@load')->middleware('auth:users');
 Route::get('/dashboard', function(){return view('user.dashboard');})->middleware('auth:users');
 Route::get('/{id}/profile', 'UserController@profile')->middleware('auth:users');
+Route::post('/{id}/edit user', 'UserController@editUser')->middleware('auth:users');
 ////////////////////////////////////////////////////////////
 Route::get('/{id}/form donasi', 'DonasiController@donasi')->middleware('auth:users');
 Route::post('/donasikan', 'DonasiController@donasikan');
@@ -46,3 +47,7 @@ Route::get('/data donasi', 'AdminController@donasi')->middleware('auth:admins');
 Route::get('/validasi/{id}', 'AdminController@validasi')->middleware('auth:admins');
 Route::get('/data user', 'AdminController@user')->middleware('auth:admins');
 Route::get('{id}/deleteUser', 'AdminController@hapusUser')->middleware('auth:admins');
+Route::get('/data admin', 'AdminController@admin')->middleware('auth:admins');
+Route::get('/tambah admin', function(){return view('admin.tambah_admin');})->middleware('auth:admins');
+Route::post('/tambah', 'AdminController@tambahAdmin')->middleware('auth:admins');
+Route::get('{id}/deleteAdmin', 'AdminController@hapusAdmin')->middleware('auth:admins');

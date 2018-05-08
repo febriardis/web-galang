@@ -7,7 +7,7 @@
 @section('content')
 	<div class="panel" style="background-color: #b3cccc; font-size: 24px; color: #ffffff">
 	    <div class="panel-heading">
-	       	<a class="left" href="#" style="color: #fff">Data User</a> 
+	       	<a class="left" href="#" style="color: #fff">Data Admin</a> 
 	    	<div class="left" style="margin: 3px">
 		    	<i class="glyphicon glyphicon-menu-right"></i>
 	    	</div>
@@ -16,7 +16,10 @@
 		<div class="clear"></div>
 	</div>
 
-	<a href="#" class="btn btn-default"><i class="glyphicon glyphicon-print"></i> Cetak</a>
+
+	<p>Data admin di <a href="/home">KITAMAMPU.com</a></p>    
+	<a href="/tambah admin" class="btn btn-default">Tambah</a>
+	
 	@if(Session::has('pesan'))        
 		<span class="label label-info">{{Session::get('pesan')}}</span>
 	@endif
@@ -24,13 +27,9 @@
 	    <thead>
 	      	<tr>
 	      		<th>No</th>
-	      		<th style="width: 70px">ID User</th>
+	      		<th>ID Admin</th>
 	      		<th>Nama</th>
 		        <th>Username</th>
-		        <th>Jenis Kelamin</th>
-		        <th>No Telp</th>
-		        <th>E-mail</th>
-		        <th>Alamat</th>
 		        <th>Aksi</th>
 		    </tr>
 	    </thead>
@@ -42,10 +41,6 @@
 				<td>{{ $dt->id }}</td>
 				<td>{{ $dt->nama }}</td>
 				<td>{{ $dt->username }}</td>
-				<td>{{ $dt->jenkel }}</td>
-				<td>{{ $dt->no_telp }}</td>
-				<td>{{ $dt->email }}</td>
-				<td>{{ $dt->alamat }}</td>
 				<td>
 					<script>
 					  	function ConfirmDelete() {
@@ -56,7 +51,7 @@
 					    		return false;
 					  	}
 					</script>
-	    			<a href="/{{$dt->id}}/deleteUser" class="btn btn-danger btn-xs" onclick="return ConfirmDelete()"><span class="glyphicon glyphicon-remove-circle"></span> Delete </a>
+	    			<a href="/{{$dt->id}}/deleteAdmin" class="btn btn-danger btn-xs" onclick="return ConfirmDelete()"><span class="glyphicon glyphicon-remove-circle"></span> Delete </a>
 				</td>
 			</tr>
 			@endforeach

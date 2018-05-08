@@ -61,7 +61,7 @@
           <!--end-->
           <input type="file" name="gambar" class="form-control" onchange="readURL(this);" accept="image/*" required="">
           <div class="showimage">
-            <img id="cek-gambar" src="#" alt="Masukkan Gambar">
+            <img id="cek-gambar" src="#" alt="">
           </div>
         </div>
         

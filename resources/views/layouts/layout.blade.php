@@ -15,7 +15,7 @@
 			<div class="center">
 			@guest
 				<div class="brand left">
-					KITAMAMPU.com
+					Kitamampu.org
 				</div>
 				<ul class="nav-me left">
 					<li><a href="/">Home</a></li><span>|</span>
@@ -29,7 +29,7 @@
 				</ul>
 			@elseif(Auth::guard('users')->check())
 				<div class="brand left">
-					KITAMAMPU.com
+					Kitamampu.org
 				</div>
 				<ul class="nav-me left">
 					<li><a href="{{url('/home')}}">Home</a></li><span>|</span>
@@ -50,10 +50,10 @@
 				</ul>
 			@elseif(Auth::guard('admins')->check())
 				<div class="brand left">
-					KITAMAMPU.com
+					Kitamampu.org
 				</div>
 				<ul class="nav-me left">
-					<li><a href="#">Dashboard</a></li><span>|</span>
+					<li><a href="{{ url('/home admin') }}">Dashboard</a></li><span>|</span>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" >Data Master
 						<span class="caret"></span></a>
@@ -67,9 +67,8 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" >Cetak Laporan
 						<span class="caret"></span></a>
 				        <ul class="dropdown-menu">
-				        	<li><a href="#">Data Galang</a></li>
-							<li><a href="#">Data Donatur</a></li>
-							<li><a href="#">Data User</a></li>
+				        	<li><a href="#">Laporan Bulanan</a></li>
+							<li><a href="#">Laporan Tahunan</a></li>
 				        </ul>
 					</li><span>|</span>
 					<li><a href="#">About</a></li></li>

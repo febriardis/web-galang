@@ -61,7 +61,7 @@
           <!--end-->
           <input type="file" name="gambar" class="form-control" onchange="readURL(this);" value="{{ url('uploads/file/'.$data->foto) }}" accept="image/*">
           <div class="showimage">
-            <img id="cek-gambar" src="{{ url('uploads/file/'.$data->foto) }}"" alt="Masukkan Gambar">
+            <img id="cek-gambar" src="{{ url('uploads/file/'.$data->foto) }}" alt="Masukkan Gambar">
           </div>
         </div>
         
@@ -86,7 +86,7 @@
             $(document).ready(function(){
  
                 // Format mata uang.
-                $( '.uang' ).mask('000.000.000.000.000', {reverse: true});
+                $( '.uang' ).mask('000.000.000', {reverse: true});
  
             })
           </script>
