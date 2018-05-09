@@ -22,6 +22,7 @@ Route::get('/daftar', function(){return view('auth.register');})->middleware('gu
 Route::post('/regist', 'AuthController@daftar');
 ///////////////////////USER//////////////////////////////////
 Route::get('/home', 'UserController@home')->middleware('auth:users');
+Route::get('/about user', function(){return view('about');})->middleware('auth:users');
 Route::get('/donasi', 'UserController@load')->middleware('auth:users');
 Route::get('/dashboard', function(){return view('user.dashboard');})->middleware('auth:users');
 Route::get('/{id}/profile', 'UserController@profile')->middleware('auth:users');
@@ -42,6 +43,7 @@ Route::get('/data galang/{idGalang}/', 'GalangController@tabel')->middleware('au
 
 /////////////////////////////ADMIN/////////////////////////////////
 Route::get('/home admin', 'AdminController@home')->middleware('auth:admins');
+Route::get('/about admin', function(){return view('about');})->middleware('auth:admins');
 Route::get('/data galang', 'AdminController@galang')->middleware('auth:admins');
 Route::get('{id}/deleteGalang', 'AdminController@hapusGalang')->middleware('auth:admins');
 Route::get('/cetak galang','AdminController@cetakGalang')->middleware('auth:admins');

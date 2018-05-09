@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+<div style="margin-top: 50px">
 	<h3>Tentang Website</h3>
 	<div style="width: 60%">
 		<p>Website ini dibangun untuk membantu memudahkan para donatur menyalurkan dana bantuannya kepada masyrakat yang kurang mampu atau korban bencana alam secara online.</p>
@@ -48,4 +49,5 @@
       	<p><span class="glyphicon glyphicon-phone"></span> 021 912 315</p>
     	<p><span class="glyphicon glyphicon-envelope"></span> kitamampu@gmail.com</p>
 	</div>
+</div>
 @endsection

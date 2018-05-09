@@ -36,7 +36,7 @@
 					<li><a href="{{url('/dashboard')}}">Dashboard</a></li><span>|</span>
 					<li><a href="{{url('/donasi')}}">Donasi</a></li><span>|</span>
 					<li><a href="{{url('/galang dana')}}">Galang Dana</a></li><span>|</span>
-					<li><a href="#">About</a></li></li>
+					<li><a href="{{ url('/about user') }}">About</a></li></li>
 				</ul>
 				<ul class="nav-me right">
 					<li class="dropdown">
@@ -71,7 +71,7 @@
 							<li><a href="{{ url('/laporan tahunan') }}">Laporan Tahunan</a></li>
 				        </ul>
 					</li><span>|</span>
-					<li><a href="#">About</a></li></li>
+					<li><a href="{{ url('/about admin') }}">About</a></li></li>
 				</ul>
 
 				<ul class="nav-me right">
