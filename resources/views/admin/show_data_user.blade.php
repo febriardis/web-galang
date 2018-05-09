@@ -11,12 +11,12 @@
 	    	<div class="left" style="margin: 3px">
 		    	<i class="glyphicon glyphicon-menu-right"></i>
 	    	</div>
-	       	<a href="">Kitamampu.com</a>
+	       	<a href="">Kitamampu.org</a>
 	  	</div>
 		<div class="clear"></div>
 	</div>
 
-	<a href="#" class="btn btn-default"><i class="glyphicon glyphicon-print"></i> Cetak</a>
+	<a href="{{ url('/cetak user') }}" class="btn btn-default"><span class="glyphicon glyphicon-download-alt"></span> Download PDF</a>
 	@if(Session::has('pesan'))        
 		<span class="label label-info">{{Session::get('pesan')}}</span>
 	@endif

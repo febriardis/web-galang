@@ -21,7 +21,7 @@
 	</div>
 
 	<h2>Data Galang</h2>
-	<p>Dana yang anda kumpulkan di <a href="/home">KITAMAMPU.com</a></p>    
+	<p>Dana yang anda kumpulkan di <a href="/home">KITAMAMPU.org</a></p>    
 	<a href="/galang dana" class="btn btn-default">Tambah</a>
 	@if(Session::has('pesan'))        
 		<span class="label label-info">{{Session::get('pesan')}}</span>

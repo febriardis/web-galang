@@ -22,8 +22,8 @@
             <script>
                 $(document).ready(function(){
                     // Format mata uang.
-                    $( '.uang' ).mask('000.000.000', {reverse: true});     
-            })
+                    $( '#uang' ).mask('000.000.000', {reverse: true});     
+                });
             </script>
             <!--end-->
             <label for="jumlah" class="control-label">Nominal Donasi</label>
@@ -31,7 +31,7 @@
             <span class="text-danger">{{ $errors->first('nominal')}}</span> 
             <div class="input-group">
                 <span class="input-group-addon"><b>Rp</b></span>
-                <input type="text" name="nominal" placeholder="0" class="uang form-control" required="">
+                <input type="number" name="nominal" placeholder="0" class="form-control" required="">
             </div>
         </div>
         <div class="form-group">

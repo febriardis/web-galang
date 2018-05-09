@@ -6,7 +6,7 @@
 
 @section('content')
 	<div class="form-register">		
-		<center><h3>Tambah Admin <a href="#">Kitamampu.com</a></h3></center>
+		<center><h3>Tambah Admin <a href="#">Kitamampu.org</a></h3></center>
 		<form method="POST" action="/tambah" enctype="multipart/form-data">
 			@if(Session::has('pesan'))
 			<div class="alert alert-danger">

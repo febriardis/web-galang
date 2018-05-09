@@ -20,7 +20,8 @@ class TbDonasiView extends Migration
             tb_donasi.nominal as nominal,
             tb_donasi.bank as no_rek,
             tb_galang.tgl_akhir as tgl_akhir,
-            tb_donasi.status as status
+            tb_donasi.status as status,
+            tb_donasi.created_at as created_at
             FROM tb_donasi
             JOIN tb_galang
             ON (tb_donasi.galang_id = tb_galang.id);

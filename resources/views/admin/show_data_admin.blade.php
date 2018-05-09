@@ -11,13 +11,13 @@
 	    	<div class="left" style="margin: 3px">
 		    	<i class="glyphicon glyphicon-menu-right"></i>
 	    	</div>
-	       	<a href="">Kitamampu.com</a>
+	       	<a href="">Kitamampu.org</a>
 	  	</div>
 		<div class="clear"></div>
 	</div>
 
 
-	<p>Data admin di <a href="/home">KITAMAMPU.com</a></p>    
+	<p>Data admin di <a href="/home">KITAMAMPU.org</a></p>    
 	<a href="/tambah admin" class="btn btn-default">Tambah</a>
 	
 	@if(Session::has('pesan'))        

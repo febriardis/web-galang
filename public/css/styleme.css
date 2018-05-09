@@ -21,6 +21,16 @@ body {
 	float: right;
 }
 
+.srch-control {
+	float: right;
+}
+
+@media only screen and (max-width: 280px) {
+	.srch-control {
+		float: left;
+	}
+}
+
 .listcheck {
 	background:#e6e6e6e6; 
 	padding: 10px; 

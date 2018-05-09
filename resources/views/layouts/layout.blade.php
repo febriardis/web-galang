@@ -40,7 +40,7 @@
 				</ul>
 				<ul class="nav-me right">
 					<li class="dropdown">
-				        <a class="dropdown-toggle" data-toggle="dropdown" href="#">User | {{ Auth::user()->nama }}
+				        <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{ Auth::user()->nama }}
 				        <span class="caret"></span></a>
 				        <ul class="dropdown-menu">
 				        	<li><a href="/{{ Auth::user()->id }}/profile">{{ Auth::user()->nama }}</a></li>
@@ -67,8 +67,8 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" >Cetak Laporan
 						<span class="caret"></span></a>
 				        <ul class="dropdown-menu">
-				        	<li><a href="#">Laporan Bulanan</a></li>
-							<li><a href="#">Laporan Tahunan</a></li>
+				        	<li><a href="{{ url('/laporan bulanan') }}">Laporan Bulanan</a></li>
+							<li><a href="{{ url('/laporan tahunan') }}">Laporan Tahunan</a></li>
 				        </ul>
 					</li><span>|</span>
 					<li><a href="#">About</a></li></li>

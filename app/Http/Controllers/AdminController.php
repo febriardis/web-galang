@@ -8,6 +8,7 @@ use App\Admin;
 use App\User;
 use App\Donasi;
 use App\DonasiView;
+use PDF;
 
 class AdminController extends Controller
 {
@@ -78,6 +79,13 @@ class AdminController extends Controller
     	return redirect('/data galang')
         ->with('pesan', 'data berhasil dihapus');
     }
+
+    function cetakGalang() {
+        $data = Galang::all();
+        $pdf = PDF::loadView('admin.cetak_data_galang', compact('data'));
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->download('invoice-campaign('.date("Y-m-d h:i:sa").").".'pdf');
+    }
     ///////////////////////////////////////DONASI////////////////////////////////////////////////
     function donasi() {
     	$tb = DonasiView::orderBy('user_id', 'ASC')->get();
@@ -95,6 +103,12 @@ class AdminController extends Controller
         ->with('pesan', 'data berhasil divalidasi');
     }
 
+    function cetakDonasi() {
+        $data = DonasiView::where('status', 'Confirmed')->get(); //all();
+        $pdf = PDF::loadView('admin.cetak_data_donatur', compact('data'));
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->download('invoice-donatur('.date("Y-m-d h:i:sa").").".'pdf');
+    }
     ///////////////////////////////////////USER////////////////////////////////////////////////
     function user() {
     	$tbUser = User::all();
@@ -109,5 +123,12 @@ class AdminController extends Controller
 
     	return redirect('/data user')
         ->with('pesan', 'data berhasil dihapus');
+    }
+
+    function cetakUser() {
+        $data = User::all();
+        $pdf = PDF::loadView('admin.cetak_data_user', compact('data'));
+        $pdf->setPaper('A4', 'portrait');
+        return $pdf->download('invoice-donatur('.date("d-M-Y h:i:sa").").".'pdf');
     }
 }

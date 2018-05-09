@@ -43,11 +43,26 @@ Route::get('/data galang/{idGalang}/', 'GalangController@tabel')->middleware('au
 Route::get('/home admin', 'AdminController@home')->middleware('auth:admins');
 Route::get('/data galang', 'AdminController@galang')->middleware('auth:admins');
 Route::get('{id}/deleteGalang', 'AdminController@hapusGalang')->middleware('auth:admins');
+Route::get('/cetak galang','AdminController@cetakGalang')->middleware('auth:admins');
+//----------------------------------------------------------------------
 Route::get('/data donasi', 'AdminController@donasi')->middleware('auth:admins');
 Route::get('/validasi/{id}', 'AdminController@validasi')->middleware('auth:admins');
+Route::get('/cetak donasi', 'AdminController@cetakDonasi')->middleware('auth:admins');
+//----------------------------------------------------------------------
 Route::get('/data user', 'AdminController@user')->middleware('auth:admins');
 Route::get('{id}/deleteUser', 'AdminController@hapusUser')->middleware('auth:admins');
+Route::get('/cetak user','AdminController@cetakUser')->middleware('auth:admins');
+//----------------------------------------------------------------------
 Route::get('/data admin', 'AdminController@admin')->middleware('auth:admins');
 Route::get('/tambah admin', function(){return view('admin.tambah_admin');})->middleware('auth:admins');
 Route::post('/tambah', 'AdminController@tambahAdmin')->middleware('auth:admins');
 Route::get('{id}/deleteAdmin', 'AdminController@hapusAdmin')->middleware('auth:admins');
+////////////////////////////////////////////////////////////////////
+
+/////////////////////////////LAPORAN/////////////////////////////////
+Route::get('/query bulan', 'LaporanController@cariBulanan')->middleware('auth:admins'); //searching
+Route::get('/laporan bulanan', 'LaporanController@bulanan')->middleware('auth:admins');
+
+Route::get('/query tahun', 'LaporanController@cariTahunan')->middleware('auth:admins'); //searching
+Route::get('/laporan tahunan', 'LaporanController@tahunan')->middleware('auth:admins');
+/////////////////////////////////////////////////////////////////////

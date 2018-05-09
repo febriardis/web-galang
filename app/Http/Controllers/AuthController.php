@@ -14,7 +14,7 @@ class AuthController extends Controller
 		$cekEmail    = User::where('email', $req->email)->get();
 		$this->validate($req, [
 			'nama' => 'required|string|max:255',
-			'username' => 'required|string|max:255',
+			'username' => 'required|string|min:6|max:255',
             'password' => 'required|string|min:6|regex:/^.*(?=.*[a-zA-Z])(?=.*[0-9]).*$/|confirmed',
         ]);
 

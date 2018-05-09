@@ -19,7 +19,7 @@
 	  	</div>
 	  	<div class="clear"></div>
 	</div>
-	<p>Data partisipasi anda di <a href="/home">KITAMAMPU.com</a></p>    
+	<p>Data partisipasi anda di <a href="/home">KITAMAMPU.org</a></p>    
 	<table class="table table-hover">
 	    <thead>
 	      	<tr>
