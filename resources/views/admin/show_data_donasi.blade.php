@@ -32,8 +32,8 @@
 		        <th>Nominal</th>
 		        <th>Metode Transfer</th>
 		        <th>Bukti Transfer</th>
-		        <th class="lose">Status</th>
-		        <th class="lose">Opsi</th>
+		        <th>Status</th>
+		        <th>Opsi</th>
 		    </tr>
 	    </thead>
 	    <tbody>
@@ -48,17 +48,28 @@
 	    		<td> {{ $dt->no_rek }} </td>
 	    		<!-- cek -->
 		        <div style="display: none;">
-	            	{{! $cektb = (App\Konfirmasi::where('donasi_id', 32))->first() }}
+	            	{{! $cektb = (App\Konfirmasi::where('donasi_id', $dt->donasi_id))->first() }}
 	            </div>
 	            <!-- end -->
 	            <td style="width: 120px; height: 150px"> 
-           			<img src="{{ url('uploads/file/'.$cektb->bukti) }}" style="width: 100%; height: 100%"> 
+	            	
+	            	@if(count($cektb) == 0)
+           				<center><span class="help-block">Not Found</span></center>
+           			@else
+           				<img src="{{ url('uploads/file/'.$cektb->bukti) }}" style="width: 100%; height: 100%"> 
+           			@endif
+
            		</td>
 	    	@if($dt->status == 'Processed')
 	    		<td><span class="label label-warning"><span class="glyphicon glyphicon-refresh"></span> Processed</span></td>
-	    		<td>
-	    			<a href="/validasi/{{ $dt->donasi_id }}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-check"></span> Validation </a>
-	    		</td>
+	    		<td><a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-ban-circle"></span> No action </a></td>
+	    	@elseif($dt->status == 'Confirmation Process')
+				<td>
+		       		<label class="label label-warning"><span class="glyphicon glyphicon-refresh"></span> Confirmation Process</label>
+		       	</td>
+		        <td>          
+              		<a href="/validasi/{{ $dt->donasi_id }}" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-check"></span> Validation </a>
+				</td>
 	    	@elseif($dt->status == 'Confirmed')
 	    		<td><label class="label label-success"><span class="glyphicon glyphicon-ok-circle"></span> Validated</label></td>
 	    		<td><a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-ban-circle"></span> No action </a></td>

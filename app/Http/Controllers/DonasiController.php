@@ -58,9 +58,9 @@ class DonasiController extends Controller
             return redirect()->action('DonasiController@konfirm', ['id' => $id])
             ->with('pesan', 'nominal tidak sesuai !');
         }else{
-            //$tbDonasi = Donasi::find($id); //ubah status ditabel donasi
-            //$tbDonasi->status = 'Confirmed';
-            //$tbDonasi->save(); 
+            $tbDonasi = Donasi::find($id); //ubah status ditabel donasi
+            $tbDonasi->status = 'Confirmation Process';
+            $tbDonasi->save(); 
             //-------------------------------------------
             $tabel = new Konfirmasi;
             $tabel->donasi_id = $req->donasiID;

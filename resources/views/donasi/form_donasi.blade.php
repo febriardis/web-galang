@@ -42,11 +42,11 @@
         	<label for="bank" class="control-label">Metode Pembayaran</label>
         	<select class="form-control" name="bank" required="">
 	            <option value="">-Pilih-</option>
-	            <option>Transfer BCA 092131023 a/n Kitamampu.com</option>
-	            <option>Transfer BNI 1945832030 a/n Kitamampu.com</option>
-	            <option>Transfer BNI SYARIAH 1890208900234 a/n Kitamampu.com</option>
-	            <option>Transfer MANDIRI 38927839 a/n Kitamampu.com</option>
-	            <option>Transfer BRI 093489000232 a/n Kitamampu.com</option>
+	            <option>Transfer BCA 092131023 a/n Kitamampu.org</option>
+	            <option>Transfer BNI 1945832030 a/n Kitamampu.org</option>
+	            <option>Transfer BNI SYARIAH 1890208900234 a/n Kitamampu.org</option>
+	            <option>Transfer MANDIRI 38927839 a/n Kitamampu.org</option>
+	            <option>Transfer BRI 093489000232 a/n Kitamampu.org</option>
         	</select>
         </div>
         <div class="checkbox listcheck">

@@ -25,12 +25,12 @@ class LaporanController extends Controller
 
         $tbUser   = User::whereMonth('created_at', $query)->paginate(10);
         $tbGalang = Galang::whereMonth('created_at', $query)->paginate(10);
-        $tbDonasi = DonasiView::whereMonth('created_at', $query)->paginate(10);
+        $tbDonasi = DonasiView::orderBy('user_id', 'ASC')->where('status', 'Confirmed')->whereMonth('created_at', $query)->paginate(10);
 
-        return view('admin.laporan_perbulan') //, compact('tbUser', 'tbDonasi', 'tbGalang'));
-        ->with('tbUser', $tbUser)
-        ->with('tbGalang', $tbGalang)
-        ->with('tbDonasi', $tbDonasi);
+        return view('admin.laporan_perbulan', compact('tbUser', 'tbDonasi', 'tbGalang', 'query'));
+        //->with('tbUser', $tbUser)
+        //->with('tbGalang', $tbGalang)
+        //->with('tbDonasi', $tbDonasi);
     }
     /////////////////////////////////////////////////////////////////////////////////////////////////
     function tahunan() {  	
@@ -49,12 +49,11 @@ class LaporanController extends Controller
 
         $tbUser   = User::whereYear('created_at', $query)->paginate(10);
         $tbGalang = Galang::whereYear('created_at', $query)->paginate(10);
-        $tbDonasi = DonasiView::whereYear('created_at', $query)->paginate(10);
+        $tbDonasi = DonasiView::orderBy('user_id', 'ASC')->where('status', 'Confirmed')->whereYear('created_at', $query)->paginate(10);
 
-        return view('admin.laporan_pertahun') //, compact('tbUser', 'tbDonasi', 'tbGalang'));
-        ->with('tbUser', $tbUser)
-        ->with('tbGalang', $tbGalang)
-        ->with('tbDonasi', $tbDonasi);
-        //->with('pesan', 'hayyy');
+        return view('admin.laporan_pertahun', compact('tbUser', 'tbDonasi', 'tbGalang', 'query'));
+        //->with('tbUser', $tbUser)
+        //->with('tbGalang', $tbGalang)
+        //->with('tbDonasi', $tbDonasi);
     }
 }

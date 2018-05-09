@@ -49,6 +49,14 @@
 			        <td>          
 	              		<a href="/{{ $dt->donasi_id }}/konfirmasi donasi" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-check"></span> Confirm </a>
 					</td>
+
+					@elseif($dt->status == 'Confirmation Process')
+					<td>
+			       		<label class="label label-warning"><span class="glyphicon glyphicon-refresh"></span> Confirmation Process</label>
+			       	</td>
+			        <td>          
+	              		<a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-ban-circle"></span> No action </a>
+					</td>
 			        @elseif($dt->status == 'Confirmed')
 			       	<td>
 			       		<label class="label label-success"><span class="glyphicon glyphicon-ok-circle"></span> Confirmed</label>

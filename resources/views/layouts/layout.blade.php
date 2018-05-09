@@ -21,7 +21,7 @@
 					<li><a href="/">Home</a></li><span>|</span>
 					<li><a href="/masuk">Donasi</a></li><span>|</span>
 					<li><a href="/masuk">Galang Dana</a></li><span>|</span>
-					<li><a href="#">About</a></li></li>
+					<li><a href="{{url('/about')}}">About</a></li></li>
 				</ul>
 				<ul class="nav-me right">
 					<li><a href="/daftar">Daftar</a></li><span>|</span>

@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'UserController@home');
+Route::get('/about', function(){return view('about');});
 /////////////////////////////////////////////////////////
 Route::get('/masuk', function(){return view('auth.login');})->middleware('guest');
 Route::post('/signin', 'AuthController@masuk');
