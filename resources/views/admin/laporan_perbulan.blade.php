@@ -65,6 +65,7 @@
 		            <th>No Telp</th>
 		            <th>E-mail</th>
 		            <th>Alamat</th>
+		            <th>Keterangan</th>
 	        	</tr>
 	      	</thead>
 	      	<tbody>
@@ -79,7 +80,14 @@
 		          	<td>{{ $dt->jenkel }}</td>
 		          	<td>{{ $dt->no_telp }}</td>
 		          	<td>{{ $dt->email }}</td>
-		          	<td>{{ $dt->alamat }}</td>
+		          	<td>{{ $dt->alamat }}</td>				
+		          	<td>
+					@if($dt->username == '')
+						<p class="text-danger">Non Aktif</p>
+					@else
+						<p class="text-info">Aktif</p>
+					@endif
+					</td>
 	        	</tr>
 	        	@endforeach
 	        @else
@@ -148,7 +156,7 @@
 		        <tr>
 		          	<td style="text-align: center">{{ $no++ }}</td>
 		          	<td style="text-align: center">{{ $dt->user_id }}</td>
-		          	<td></td>
+		          	<td>{{ (App\User::find($dt->user_id))->nama }}</td>
 		          	<td>{{ $dt->judul }}</td>
 		          	<td>{{ $dt->nominal }}</td>
 		          	<td>{{ $dt->no_rek }}</td>

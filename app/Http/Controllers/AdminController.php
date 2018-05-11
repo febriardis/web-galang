@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use App\Galang;
 use App\Admin;
 use App\User;
@@ -49,7 +50,7 @@ class AdminController extends Controller
             $tb = new Admin;
             $tb->nama     = $req->nama;
             $tb->username = $req->username;
-            $tb->password = $req->password;
+            $tb->password = Hash::make($req->password);
             $tb->save();
             
             return redirect('/data admin')
