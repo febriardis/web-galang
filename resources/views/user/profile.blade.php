@@ -91,6 +91,16 @@
 			<div class="form-group">
 				<input type="submit" value="Simpan" class="btn btn-info">
 				<a href="/dashboard" class="btn btn-danger">Batal</a>
+				<script>
+				  	function ConfirmDelete() {
+				  		var x = confirm("Yakin Akan Berhenti Menjadi Member?");
+				  		if (x)
+				    		return true;
+				  		else
+				    		return false;
+				  	}
+				</script>
+				<a href="/{{ $cekdata->id }}/hapusAkun" class="right text-danger"  onclick="return ConfirmDelete()">Hapus Akun {{ Auth::user()->nama }}?</a>
 			</div>
 		</form>
 	</div>

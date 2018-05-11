@@ -57,7 +57,7 @@
 		        <td>{{ date('d M Y', strtotime($dt->tgl_akhir)) }}</td>
 		        <td>          
               		<a href="/{{ $dt->id }}/edit galang dana" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-pencil"></span> Edit </a>
-              		<a href="#" class="btn btn-info btn-xs"> Lihat Donatur </a>
+              		<a href="/{{ $dt->id }}/show donatur" class="btn btn-info btn-xs"> Lihat Donatur </a>
 				</td>
 		    </tr>
 		    @endforeach

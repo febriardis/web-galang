@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Galang;
+use App\Donasi;
 
 class GalangController extends Controller
 {
@@ -70,5 +71,12 @@ class GalangController extends Controller
 
         return redirect()->action('GalangController@tabel', ['id' => $idUser])
 		->with('pesan','Data berhasil diedit');
+    }
+
+    function tabelshowDonatur($galangid) {
+        $tabel = Donasi::where('galang_id', $galangid)->get();
+
+        return view('galangdana.tabel_show_donatur')
+        ->with('data', $tabel);
     }
 }

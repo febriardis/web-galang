@@ -31,6 +31,7 @@
 		        <th>No Telp</th>
 		        <th>E-mail</th>
 		        <th>Alamat</th>
+		        <th>Keterangan</th>
 		        <th>Aksi</th>
 		    </tr>
 	    </thead>
@@ -46,6 +47,13 @@
 				<td>{{ $dt->no_telp }}</td>
 				<td>{{ $dt->email }}</td>
 				<td>{{ $dt->alamat }}</td>
+				<td>
+					@if($dt->username == '')
+						<p class="text-danger">Non Aktif</p>
+					@else
+						<p class="text-info">Aktif</p>
+					@endif
+				</td>
 				<td>
 					<script>
 					  	function ConfirmDelete() {

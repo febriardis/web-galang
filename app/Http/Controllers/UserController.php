@@ -7,6 +7,7 @@ use App\Galang;
 use App\Donasi;
 use App\User;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -58,5 +59,16 @@ class UserController extends Controller
             $table->save();
 
             return redirect('/dashboard');
+    }
+
+    function hapusUser($id) { //hapus akun
+        $table = User::find($id);
+        $table->email = '';
+        $table->username = '';
+        $table->password = '';
+        $table->save();
+
+        Auth::guard('users')->logout();
+        return redirect('/');
     }
 }

@@ -20,6 +20,7 @@ Route::get('logout', 'AuthController@keluar');
 //////////////////////Auth//////////////////////////////
 Route::get('/daftar', function(){return view('auth.register');})->middleware('guest');
 Route::post('/regist', 'AuthController@daftar');
+
 ///////////////////////USER//////////////////////////////////
 Route::get('/home', 'UserController@home')->middleware('auth:users');
 Route::get('/about user', function(){return view('about');})->middleware('auth:users');
@@ -27,6 +28,7 @@ Route::get('/donasi', 'UserController@load')->middleware('auth:users');
 Route::get('/dashboard', function(){return view('user.dashboard');})->middleware('auth:users');
 Route::get('/{id}/profile', 'UserController@profile')->middleware('auth:users');
 Route::post('/{id}/edit user', 'UserController@editUser')->middleware('auth:users');
+Route::get('/{id}/hapusAkun', 'UserController@hapusUser')->middleware('auth:users');
 ////////////////////////////////////////////////////////////
 Route::get('/{id}/form donasi', 'DonasiController@donasi')->middleware('auth:users');
 Route::post('/donasikan', 'DonasiController@donasikan');
@@ -39,6 +41,7 @@ Route::post('{idUser}/simpan galang', 'GalangController@tambah');
 Route::get('/{id}/edit galang dana', 'GalangController@edit')->middleware('auth:users');
 Route::post('/{idDonasi}/{idUser}/update galang', 'GalangController@update');
 Route::get('/data galang/{idGalang}/', 'GalangController@tabel')->middleware('auth:users');
+Route::get('/{idGalang}/show donatur', 'GalangController@tabelshowDonatur')->middleware('auth:users');
 ////////////////////////////////////////////////////////////
 
 /////////////////////////////ADMIN/////////////////////////////////
